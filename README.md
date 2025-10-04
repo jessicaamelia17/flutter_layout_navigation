@@ -26,3 +26,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 4: Implementasi title row
 ![Langkah4](images/03.png)
+
+---
+
+## Praktikum 2: Implementasi button row
+
+### Langkah 1: Buat method Column _buildButtonColumn
+![Langkah1](images/04.png)
