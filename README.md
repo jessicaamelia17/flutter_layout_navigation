@@ -50,3 +50,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 1: Buat widget textSection
 ![Langkah1](images/07.png)
+
+---
+
+### Langkah 2: Tambahkan variabel text section ke body
+![Langkah2](images/08.png)

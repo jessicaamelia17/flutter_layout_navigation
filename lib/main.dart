@@ -74,6 +74,7 @@ class MyApp extends StatelessWidget {
           children: [
             titleSection, // tampilkan bagian judul
             buttonSection, // tampilkan bagian tombol
+            textSection, // tampilkan bagian teks
           ],
         ),
       ),
