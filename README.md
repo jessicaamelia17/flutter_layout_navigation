@@ -55,3 +55,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 2: Tambahkan variabel text section ke body
 ![Langkah2](images/08.png)
+
+---
+
+## Praktikum 4: Implementasi image section
+
+### Langkah 1: Siapkan aset gambarP
+![Langkah1](images/09.png)
