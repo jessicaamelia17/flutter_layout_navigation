@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // Deklarasi titleSection di dalam build()
+    // --- Bagian titleSection ---
     Widget titleSection = Container(
       padding: const EdgeInsets.all(32),
       child: Row(
@@ -39,19 +39,33 @@ class MyApp extends StatelessWidget {
       ),
     );
 
+    // --- Bagian buttonSection (Langkah 2) ---
+    Color color = Theme.of(context).primaryColor;
+
+    Widget buttonSection = Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        _buildButtonColumn(color, Icons.call, 'CALL'),
+        _buildButtonColumn(color, Icons.near_me, 'ROUTE'),
+        _buildButtonColumn(color, Icons.share, 'SHARE'),
+      ],
+    );
+
+    // --- Return MaterialApp ---
     return MaterialApp(
       title: 'Flutter layout: Jessica Amelia dan 2341760185',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
         body: Column(
           children: [
-            titleSection, // tampilkan bagian title
+            titleSection, // tampilkan bagian judul
           ],
         ),
       ),
     );
   }
 
+  // Fungsi pembuat kolom tombol (Langkah 1)
   Column _buildButtonColumn(Color color, IconData icon, String label) {
     return Column(
       mainAxisSize: MainAxisSize.min,
