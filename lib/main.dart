@@ -51,6 +51,20 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Gunung Banyak merupakan salah satu destinasi wisata alam populer di Kota Batu, '
+        'Malang. Dikenal sebagai lokasi paralayang, tempat ini menawarkan pemandangan '
+        'indah Kota Batu dari ketinggian, terutama saat matahari terbit dan terbenam. '
+        'Selain itu, wisatawan juga dapat menikmati Omah Kayu dan Taman Langit '
+        'yang menjadi spot foto favorit. '
+        '\n\nOleh: Jessica Amelia (2341760185)',
+        softWrap: true,
+      ),
+    );
+
+
     // --- Return MaterialApp ---
     return MaterialApp(
       title: 'Flutter layout: Jessica Amelia dan 2341760185',

@@ -43,3 +43,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 3: Tambah button section ke body
 ![Langkah3](images/06.png)
+
+---
+
+## Praktikum 3: Implementasi text section
+
+### Langkah 1: Buat widget textSection
+![Langkah1](images/07.png)
