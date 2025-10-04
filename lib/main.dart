@@ -54,23 +54,31 @@ class MyApp extends StatelessWidget {
     Widget textSection = Container(
       padding: const EdgeInsets.all(32),
       child: const Text(
-        'Gunung Banyak merupakan salah satu destinasi wisata alam populer di Kota Batu, '
-        'Malang. Dikenal sebagai lokasi paralayang, tempat ini menawarkan pemandangan '
-        'indah Kota Batu dari ketinggian, terutama saat matahari terbit dan terbenam. '
-        'Selain itu, wisatawan juga dapat menikmati Omah Kayu dan Taman Langit '
-        'yang menjadi spot foto favorit. '
-        '\n\nOleh: Jessica Amelia (2341760185)',
+        'Gunung Banyak merupakan salah satu destinasi wisata alam paling terkenal di Kota Batu, '
+        'Malang, Jawa Timur. Terletak di ketinggian sekitar 1.300 meter di atas permukaan laut, '
+        'gunung ini menjadi tempat favorit bagi wisatawan yang ingin menikmati panorama alam '
+        'Kota Batu dari ketinggian. Daya tarik utama Gunung Banyak adalah aktivitas paralayang, '
+        'di mana pengunjung dapat merasakan sensasi terbang di udara sambil melihat keindahan '
+        'hamparan pegunungan dan lampu kota di malam hari.\n\n'
+        'Selain paralayang, area sekitar Gunung Banyak juga memiliki berbagai spot wisata menarik '
+        'seperti Omah Kayu, sebuah penginapan unik berupa rumah-rumah kayu yang menempel di pohon, '
+        'serta Taman Langit, tempat wisata dengan berbagai spot foto artistik dan patung-patung indah '
+        'yang instagramable. Udara yang sejuk dan suasana alam yang asri menjadikan tempat ini cocok '
+        'untuk bersantai, berfoto, ataupun sekadar menikmati waktu bersama keluarga dan teman-teman.\n\n'
+        'Bagi pecinta alam dan fotografi, Gunung Banyak juga menjadi lokasi ideal untuk berburu sunrise '
+        'dan sunset yang menawan. Dari puncak, pengunjung dapat melihat pemandangan spektakuler perbukitan '
+        'dan lembah di sekitar Batu dan Malang.\n\n'
+        'Oleh: Jessica Amelia (2341760185)',
         softWrap: true,
       ),
     );
-
 
     // --- Return MaterialApp ---
     return MaterialApp(
       title: 'Flutter layout: Jessica Amelia dan 2341760185',
       home: Scaffold(
         appBar: AppBar(title: const Text('Flutter layout demo')),
-        body: Column(
+        body: ListView(
           children: [
             Image.asset(
               'images/gunung_banyak.png',

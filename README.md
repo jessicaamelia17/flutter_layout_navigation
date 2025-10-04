@@ -68,3 +68,7 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 ### Langkah 2: Tambahkan gambar ke body
 ![Langkah2](images/10.png)
 
+---
+
+### Langkah 3: Terakhir, ubah menjadi ListView
+![Langkah3](images/langkah3.gif)
