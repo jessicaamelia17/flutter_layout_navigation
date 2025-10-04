@@ -17,3 +17,12 @@ Buatlah sebuah project flutter baru dengan nama layout_flutter. Atau sesuaikan s
 ### Langkah 2: Buka file lib/main.dart
 Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di text title.
 ![Langkah2](images/02.png)
+
+---
+
+### Langkah 3: Identifikasi layout diagram
+
+--
+
+### Langkah 4: Implementasi title row
+![Langkah4](images/03.png)
