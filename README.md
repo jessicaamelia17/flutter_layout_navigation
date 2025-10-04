@@ -60,5 +60,11 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ## Praktikum 4: Implementasi image section
 
-### Langkah 1: Siapkan aset gambarP
+### Langkah 1: Siapkan aset gambar
 ![Langkah1](images/09.png)
+
+---
+
+### Langkah 2: Tambahkan gambar ke body
+![Langkah2](images/10.png)
+

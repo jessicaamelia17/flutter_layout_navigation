@@ -72,6 +72,12 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(title: const Text('Flutter layout demo')),
         body: Column(
           children: [
+            Image.asset(
+              'images/gunung_banyak.png',
+              width: 600,
+              height: 240,
+              fit: BoxFit.cover,
+            ),
             titleSection, // tampilkan bagian judul
             buttonSection, // tampilkan bagian tombol
             textSection, // tampilkan bagian teks
