@@ -38,3 +38,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 2: Buat widget buttonSection
 ![Langkah 2](images/05.png)
+
+---
+
+### Langkah 3: Tambah button section ke body
+![Langkah3](images/06.png)

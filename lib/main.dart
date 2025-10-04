@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
         body: Column(
           children: [
             titleSection, // tampilkan bagian judul
+            buttonSection, // tampilkan bagian tombol
           ],
         ),
       ),
