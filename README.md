@@ -74,8 +74,6 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ---
 
-# Tugas Praktikum 2
-
 ## Praktikum 5: Membangun Navigasi di Flutter
 
 ### Langkah 1: Siapkan project baru
@@ -110,3 +108,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 7: Menambahkan aksi pada ListView
 ![Langkah7](images/langkah7Prak5.gif)
+
+---
+
+# Tugas Praktikum 2
+
+## 1. Menambahkan informasi arguments pada penggunaan Navigator
+![no1](images/17.png)
