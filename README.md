@@ -1,4 +1,3 @@
-# layout_flutter
 
 A new Flutter project.
 
@@ -72,3 +71,12 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 3: Terakhir, ubah menjadi ListView
 ![Langkah3](images/langkah3.gif)
+
+---
+
+# Tugas Praktikum 2
+
+## Praktikum 5: Membangun Navigasi di Flutter
+
+### Langkah 1: Siapkan project baru
+![Langkah1](images/11.png)
