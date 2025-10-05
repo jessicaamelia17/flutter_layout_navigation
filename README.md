@@ -97,3 +97,6 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 ![Langkah4](images/14.png)
 
 ---
+
+### Langkah 5: Lengkapi kode di class HomePage
+![Langkah5](images/15.png)
