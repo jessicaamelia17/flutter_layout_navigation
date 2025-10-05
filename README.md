@@ -100,3 +100,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 5: Lengkapi kode di class HomePage
 ![Langkah5](images/15.png)
+
+---
+
+### Langkah 6: Membuat ListView dan itemBuilder
+![Langkah6](images/16.png)
