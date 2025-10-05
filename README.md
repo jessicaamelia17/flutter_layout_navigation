@@ -105,3 +105,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 6: Membuat ListView dan itemBuilder
 ![Langkah6](images/16.png)
+
+---
+
+### Langkah 7: Menambahkan aksi pada ListView
+![Langkah7](images/langkah7Prak5.gif)
