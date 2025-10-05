@@ -115,3 +115,6 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ## 1. Menambahkan informasi arguments pada penggunaan Navigator
 ![no1](images/17.png)
+
+## 2. Pemanfaatan ModalRoute untuk Mengambil Data dari Halaman Sebelumnya
+![no2](images/18.png)
