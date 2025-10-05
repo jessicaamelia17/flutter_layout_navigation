@@ -85,3 +85,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 2: Mendefinisikan Route
 ![Langkah2](images/12.png)
+
+---
+
+### Langkah 3: Lengkapi Kode di main.dart
+![Langkah3](images/13.png)
