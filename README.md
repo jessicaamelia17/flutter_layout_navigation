@@ -80,3 +80,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 1: Siapkan project baru
 ![Langkah1](images/11.png)
+
+---
+
+### Langkah 2: Mendefinisikan Route
+![Langkah2](images/12.png)
