@@ -90,3 +90,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ### Langkah 3: Lengkapi Kode di main.dart
 ![Langkah3](images/13.png)
+
+---
+
+### Langkah 4: Membuat data model
+![Langkah4](images/14.png)
+
+---
