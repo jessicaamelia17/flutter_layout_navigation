@@ -130,3 +130,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ## 4. Implementasikan Hero widget
 ![no4](images/nomer4.gif)
+
+---
+
+## 5. Modifikasi tampilan menjadi aplikasi yang menarik
+![no5](images/nomer5.gif)

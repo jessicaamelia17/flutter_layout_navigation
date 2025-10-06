@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi_belanja_flutter/models/item.dart';
+import 'package:navigasi_belanja_flutter/widgets/product_card.dart';
+import 'package:navigasi_belanja_flutter/widgets/title_section.dart';
+import 'package:navigasi_belanja_flutter/widgets/footer_section.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -11,6 +14,8 @@ class HomePage extends StatelessWidget {
       images: 'assets/images/gula.png',
       stock: 10,
       rating: 4.5,
+      description:
+      'Gula pasir premium dengan butiran halus, cocok untuk masakan dan minuman sehari-hari.',
     ),
     Item(
       name: 'Salt',
@@ -18,104 +23,49 @@ class HomePage extends StatelessWidget {
       images: 'assets/images/garam.png',
       stock: 20,
       rating: 4.0,
+      description:
+      'Garam beryodium untuk kebutuhan dapur, menambah cita rasa makanan lebih nikmat.',
     ),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Home Page')),
       backgroundColor: Colors.purple[50],
-      body: Center(
-        child: Container(
-          constraints: BoxConstraints(maxWidth: 900),
-          padding: EdgeInsets.symmetric(vertical: 24, horizontal: 8),
-          child: GridView.builder(
-            itemCount: items.length,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: MediaQuery.of(context).size.width > 900 ? 4 : 2,
-              childAspectRatio: 0.7,
-              crossAxisSpacing: 24,
-              mainAxisSpacing: 24,
-            ),
-            itemBuilder: (context, index) {
-              final item = items[index];
-              return InkWell(
-                borderRadius: BorderRadius.circular(20),
-                onTap: () {
-                  Navigator.pushNamed(context, '/item', arguments: item);
-                },
-                child: Card(
-                  elevation: 8,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  color: Colors.white,
-                  child: Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                          Expanded(
-                          child: Center(
-                            child: Hero(
-                              tag: item.name, // tag unik untuk tiap item
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(14),
-                                child: Image.asset(
-                                  item.images,
-                                  fit: BoxFit.contain,
-                                  width: double.infinity,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(height: 14),
-                        Text(
-                          item.name,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Rp${item.price}',
-                          style: TextStyle(
-                            color: Colors.red,
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Text(
-                          'Stok: ${item.stock}',
-                          style: TextStyle(
-                            color: Colors.green[700],
-                            fontWeight: FontWeight.bold,
-                            fontSize: 15,
-                          ),
-                        ),
-                        SizedBox(height: 6),
-                        Row(
-                          children: [
-                            Icon(Icons.star, color: Colors.amber, size: 16),
-                            SizedBox(width: 4),
-                            Text(
-                              item.rating.toString(),
-                              style: TextStyle(fontSize: 15),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
+      appBar: AppBar(
+        title: const Text('Aplikasi Belanja'),
+        centerTitle: true,
+        backgroundColor: Colors.teal,
+        foregroundColor: Colors.white,
+      ),
+      body: Column(
+        children: [
+          // Bagian Judul
+          const TitleSection(),
+
+          // Bagian Grid Produk
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: GridView.builder(
+                itemCount: items.length,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  childAspectRatio: 0.75,
                 ),
-              );
-            },
+                itemBuilder: (context, index) {
+                  final item = items[index];
+                  return ProductCard(item: item);
+                },
+              ),
+            ),
           ),
-        ),
+
+          // Footer tetap di bawah, tidak menutupi grid
+          const FooterSection(name: 'Jessica Amelia', nim: '2341760185'),
+        ],
       ),
     );
   }

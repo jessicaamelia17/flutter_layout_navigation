@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:navigasi_belanja_flutter/models/item.dart';
+import 'package:navigasi_belanja_flutter/widgets/footer_section.dart';
 
 class ItemPage extends StatelessWidget {
   const ItemPage({super.key});
@@ -7,203 +8,202 @@ class ItemPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
-    final maxContentWidth =
-        500.0; // batas lebar konten agar tidak terlalu melebar
 
     return Scaffold(
-      appBar: AppBar(title: Text('Item Page')),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Align(
-            alignment: Alignment.topCenter,
-            child: ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: maxContentWidth),
-              child: Padding(
-                padding: const EdgeInsets.all(24),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                   Center(
-                      child: Card(
-                        elevation: 8,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(20),
-                          child: Hero(
-                            tag: itemArgs
-                                .name, // harus sama persis dengan yang di HomePage
-                            child: Image.asset(
-                              itemArgs.images,
-                              height: 200,
-                              width: 200,
-                              fit: BoxFit.cover,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
+      appBar: AppBar(
+        title: const Text(
+          'Detail Produk',
+          style: TextStyle(fontWeight: FontWeight.bold),
+        ),
+        centerTitle: true,
+        backgroundColor: Colors.teal,
+        foregroundColor: Colors.white,
+      ),
 
-                    SizedBox(height: 24),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      children: [
-                        Expanded(
-                          child: Text(
-                            itemArgs.name,
-                            style: TextStyle(
-                              fontSize: 26,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black87,
-                            ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 12,
-                            vertical: 6,
-                          ),
-                          decoration: BoxDecoration(
-                            color: Colors.amber[100],
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Row(
-                            children: [
-                              Icon(Icons.star, color: Colors.amber, size: 20),
-                              SizedBox(width: 4),
-                              Text(
-                                itemArgs.rating.toString(),
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Card(
-                      color: Colors.red[50],
-                      elevation: 2,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            Icon(Icons.price_check, color: Colors.redAccent),
-                            SizedBox(width: 10),
-                            Text(
-                              'Harga: ',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.redAccent,
-                              ),
-                            ),
-                            Text(
-                              'Rp${itemArgs.price}',
-                              style: TextStyle(
-                                fontSize: 22,
-                                color: Colors.redAccent,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 16),
-                    Card(
-                      color: Colors.green[50],
-                      elevation: 2,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(12),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(16),
-                        child: Row(
-                          children: [
-                            Icon(Icons.inventory_2, color: Colors.green),
-                            SizedBox(width: 10),
-                            Text(
-                              'Stok tersedia: ',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.green[900],
-                              ),
-                            ),
-                            Text(
-                              '${itemArgs.stock}',
-                              style: TextStyle(
-                                fontSize: 18,
-                                color: Colors.green[900],
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(height: 32),
-                    Row(
-                      children: [
-                        Expanded(
-                          child: ElevatedButton.icon(
-                            onPressed: () {
-                              // aksi add to cart
-                            },
-                            icon: Icon(Icons.add_shopping_cart),
-                            label: Text('Add to Cart'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.orange,
-                              foregroundColor: Colors.white,
-                              padding: EdgeInsets.symmetric(vertical: 18),
-                              textStyle: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 16),
-                        Expanded(
-                          child: ElevatedButton.icon(
-                            onPressed: () {
-                              // aksi checkout
-                            },
-                            icon: Icon(Icons.payment),
-                            label: Text('Checkout'),
-                            style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.green,
-                              foregroundColor: Colors.white,
-                              padding: EdgeInsets.symmetric(vertical: 18),
-                              textStyle: TextStyle(
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(12),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: [
+          // 🔹 Gambar produk
+          Hero(
+            tag: itemArgs.name,
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(16),
+              child: Image.asset(
+                itemArgs.images,
+                width: double.infinity, // biar penuh selebar layar
+                height: 250, // boleh disesuaikan
+                fit: BoxFit.contain, // biar tidak kepotong
               ),
             ),
           ),
-        ),
+
+          const SizedBox(height: 20),
+
+          // 🔹 Nama produk
+          Text(
+            itemArgs.name,
+            style: const TextStyle(
+              fontSize: 26,
+              fontWeight: FontWeight.bold,
+              color: Colors.black87,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          const SizedBox(height: 12),
+
+          // 🔹 Rating
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.star, color: Colors.amber[700], size: 24),
+              const SizedBox(width: 4),
+              Text(
+                itemArgs.rating.toString(),
+                style: const TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
+          const SizedBox(height: 16),
+
+          // 🔹 Harga dalam card
+          Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.red.shade50,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.attach_money, color: Colors.red),
+                const SizedBox(width: 6),
+                Text(
+                  "Rp${itemArgs.price}",
+                  style: const TextStyle(
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.red,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          // 🔹 Stok dalam card
+          Container(
+            width: double.infinity,
+            margin: const EdgeInsets.symmetric(vertical: 8),
+            padding: const EdgeInsets.all(12),
+            decoration: BoxDecoration(
+              color: Colors.green.shade50,
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: Row(
+              children: [
+                const Icon(Icons.inventory, color: Colors.green),
+                const SizedBox(width: 6),
+                Text(
+                  "Stok tersedia: ${itemArgs.stock}",
+                  style: const TextStyle(
+                    fontSize: 18,
+                    color: Colors.green,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          // 🔹 Deskripsi Produk
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Text(
+                  "Deskripsi Produk:",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.teal,
+                  ),
+                ),
+                const SizedBox(height: 6),
+                Text(
+                  itemArgs.description,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    color: Colors.black87,
+                    height: 1.4,
+                  ),
+                ),
+              ],
+            ),
+          ),
+
+          const SizedBox(height: 24),
+
+          // 🔹 Tombol aksi
+          Row(
+            children: [
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.add_shopping_cart),
+                  label: const Text('Tambah ke Keranjang'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.orange,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 14,
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: ElevatedButton.icon(
+                  onPressed: () {},
+                  icon: const Icon(Icons.payment),
+                  label: const Text('Checkout'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.green,
+                    foregroundColor: Colors.white,
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 14,
+                    ),
+                    textStyle: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
       ),
-      backgroundColor: Colors.purple[50],
+
+      // 🔹 Footer
+      bottomNavigationBar: const FooterSection(
+        name: 'Jessica Amelia',
+        nim: '2341760185',
+      ),
     );
   }
 }
