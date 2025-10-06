@@ -58,12 +58,15 @@ class HomePage extends StatelessWidget {
                       children: [
                           Expanded(
                           child: Center(
-                            child: ClipRRect(
-                              borderRadius: BorderRadius.circular(14),
-                              child: Image.asset(
-                                item.images,
-                                fit: BoxFit.contain,
-                                width: double.infinity,
+                            child: Hero(
+                              tag: item.name, // tag unik untuk tiap item
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(14),
+                                child: Image.asset(
+                                  item.images,
+                                  fit: BoxFit.contain,
+                                  width: double.infinity,
+                                ),
                               ),
                             ),
                           ),

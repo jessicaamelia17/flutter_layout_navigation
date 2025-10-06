@@ -23,7 +23,7 @@ class ItemPage extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Center(
+                   Center(
                       child: Card(
                         elevation: 8,
                         shape: RoundedRectangleBorder(
@@ -31,15 +31,20 @@ class ItemPage extends StatelessWidget {
                         ),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(20),
-                          child: Image.network(
-                            itemArgs.images,
-                            height: 200,
-                            width: 200,
-                            fit: BoxFit.cover,
+                          child: Hero(
+                            tag: itemArgs
+                                .name, // harus sama persis dengan yang di HomePage
+                            child: Image.asset(
+                              itemArgs.images,
+                              height: 200,
+                              width: 200,
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),
                     ),
+
                     SizedBox(height: 24),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.center,

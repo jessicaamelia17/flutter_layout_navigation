@@ -123,5 +123,10 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ---
 
-## Menampilkan produk dengan atribut lengkap menggunakan GridView
+## 3.Menampilkan produk dengan atribut lengkap menggunakan GridView
 ![no3](images/nomer3.gif)
+
+---
+
+## 4. Implementasikan Hero widget
+![no4](images/nomer4.gif)
