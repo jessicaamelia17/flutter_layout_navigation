@@ -3,12 +3,11 @@ import 'package:navigasi_belanja_flutter/models/item.dart';
 import 'package:navigasi_belanja_flutter/widgets/footer_section.dart';
 
 class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+  final Item item;
+  const ItemPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -23,25 +22,25 @@ class ItemPage extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          // 🔹 Gambar produk
+          // Gambar produk
           Hero(
-            tag: itemArgs.name,
+            tag: item.name,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: Image.asset(
-                itemArgs.images,
-                width: double.infinity, // biar penuh selebar layar
-                height: 250, // boleh disesuaikan
-                fit: BoxFit.contain, // biar tidak kepotong
+                item.images,
+                width: double.infinity,
+                height: 250,
+                fit: BoxFit.contain, // biar gak kepotong
               ),
             ),
           ),
 
           const SizedBox(height: 20),
 
-          // 🔹 Nama produk
+          // Nama produk
           Text(
-            itemArgs.name,
+            item.name,
             style: const TextStyle(
               fontSize: 26,
               fontWeight: FontWeight.bold,
@@ -51,21 +50,21 @@ class ItemPage extends StatelessWidget {
           ),
           const SizedBox(height: 12),
 
-          // 🔹 Rating
+          // Rating
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Icon(Icons.star, color: Colors.amber[700], size: 24),
               const SizedBox(width: 4),
               Text(
-                itemArgs.rating.toString(),
+                item.rating.toString(),
                 style: const TextStyle(fontSize: 18),
               ),
             ],
           ),
           const SizedBox(height: 16),
 
-          // 🔹 Harga dalam card
+          // Harga dalam card
           Container(
             width: double.infinity,
             margin: const EdgeInsets.symmetric(vertical: 8),
@@ -79,7 +78,7 @@ class ItemPage extends StatelessWidget {
                 const Icon(Icons.attach_money, color: Colors.red),
                 const SizedBox(width: 6),
                 Text(
-                  "Rp${itemArgs.price}",
+                  "Rp${item.price}",
                   style: const TextStyle(
                     fontSize: 22,
                     fontWeight: FontWeight.bold,
@@ -90,7 +89,7 @@ class ItemPage extends StatelessWidget {
             ),
           ),
 
-          // 🔹 Stok dalam card
+          // Stok dalam card
           Container(
             width: double.infinity,
             margin: const EdgeInsets.symmetric(vertical: 8),
@@ -104,7 +103,7 @@ class ItemPage extends StatelessWidget {
                 const Icon(Icons.inventory, color: Colors.green),
                 const SizedBox(width: 6),
                 Text(
-                  "Stok tersedia: ${itemArgs.stock}",
+                  "Stok tersedia: ${item.stock}",
                   style: const TextStyle(
                     fontSize: 18,
                     color: Colors.green,
@@ -117,7 +116,7 @@ class ItemPage extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          // 🔹 Deskripsi Produk
+          // Deskripsi Produk
           Align(
             alignment: Alignment.centerLeft,
             child: Column(
@@ -133,7 +132,7 @@ class ItemPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 6),
                 Text(
-                  itemArgs.description,
+                  item.description,
                   style: const TextStyle(
                     fontSize: 16,
                     color: Colors.black87,
@@ -146,7 +145,7 @@ class ItemPage extends StatelessWidget {
 
           const SizedBox(height: 24),
 
-          // 🔹 Tombol aksi
+          // Tombol aksi
           Row(
             children: [
               Expanded(
@@ -199,7 +198,7 @@ class ItemPage extends StatelessWidget {
         ],
       ),
 
-      // 🔹 Footer
+      // Footer
       bottomNavigationBar: const FooterSection(
         name: 'Jessica Amelia',
         nim: '2341760185',

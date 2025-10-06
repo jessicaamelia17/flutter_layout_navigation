@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:navigasi_belanja_flutter/models/item.dart';
 
 class ProductCard extends StatelessWidget {
@@ -10,8 +11,8 @@ class ProductCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigasi ke ItemPage dan kirim data item
-        Navigator.pushNamed(context, '/item', arguments: item);
+        // Navigasi ke ItemPage dengan go_router
+        context.push('/item', extra: item);
       },
       child: Card(
         elevation: 6,

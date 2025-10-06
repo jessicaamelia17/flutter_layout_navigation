@@ -135,3 +135,8 @@ Buka file main.dart lalu ganti dengan kode berikut. Isi nama dan NIM Anda di tex
 
 ## 5. Modifikasi tampilan menjadi aplikasi yang menarik
 ![no5](images/nomer5.gif)
+
+---
+
+## 6. Modifikasi menggunakan plugin go_router
+![no6](images/19.png)
